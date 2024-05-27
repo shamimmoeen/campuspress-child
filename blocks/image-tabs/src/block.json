@@ -7,6 +7,10 @@
   "category": "widgets",
   "icon": "block-default",
   "description": "A block for creating interactive tabs with images.",
+  "keywords": [
+    "tabs",
+    "image"
+  ],
   "example": {},
   "attributes": {
     "tab1ImageMediumUrl": {

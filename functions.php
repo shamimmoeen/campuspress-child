@@ -30,5 +30,5 @@ function campuspress_child_register_blocks() {
 	// load_child_theme_textdomain( 'campuspress-child', get_stylesheet_directory() . '/languages' );
 
 	// Register the block 'Image Tabs'.
-	register_block_type( get_stylesheet_directory() . '/blocks/image-tabs-block/build' );
+	register_block_type( get_stylesheet_directory() . '/blocks/image-tabs/build' );
 }
