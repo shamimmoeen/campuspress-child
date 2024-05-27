@@ -1,12 +1,14 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl, TextareaControl } from '@wordpress/components';
+import { useEffect } from '@wordpress/element';
 import MediaControl from './MediaControl';
 import Tabs from './Tabs';
 import './editor.scss';
 
-export default function Edit( { attributes, setAttributes } ) {
+export default function Edit( { attributes, setAttributes, clientId } ) {
 	const {
+		uniqueId,
 		tab1ImageMediumUrl,
 		tab1Title,
 		tab1Description,
@@ -16,6 +18,12 @@ export default function Edit( { attributes, setAttributes } ) {
 		tab2Description,
 		tab2Link,
 	} = attributes;
+
+	useEffect( () => {
+		if ( ! uniqueId ) {
+			setAttributes( { uniqueId: clientId } );
+		}
+	}, [] );
 
 	const onSelectTab1Image = ( media ) => {
 		const {

@@ -2,6 +2,7 @@ import { __ } from '@wordpress/i18n';
 
 export default function Tabs( { attributes } ) {
 	const {
+		uniqueId,
 		tab1ImageUrl,
 		tab1Title,
 		tab1Description,
@@ -11,6 +12,11 @@ export default function Tabs( { attributes } ) {
 		tab2Description,
 		tab2Link,
 	} = attributes;
+
+	const tab1Id = `tab-1-${ uniqueId }`;
+	const tab2Id = `tab-2-${ uniqueId }`;
+	const panel1Id = `panel-1-${ uniqueId }`;
+	const panel2Id = `panel-2-${ uniqueId }`;
 
 	return (
 		<div className="__image_tabs">
@@ -22,8 +28,8 @@ export default function Tabs( { attributes } ) {
 				<button
 					role="tab"
 					aria-selected="true"
-					aria-controls="panel-1"
-					id="tab-1"
+					aria-controls={panel1Id}
+					id={tab1Id}
 					style={
 						tab1ImageUrl ? { backgroundImage: `url(${ tab1ImageUrl })` } : {}
 					}
@@ -33,8 +39,8 @@ export default function Tabs( { attributes } ) {
 				<button
 					role="tab"
 					aria-selected="false"
-					aria-controls="panel-2"
-					id="tab-2"
+					aria-controls={panel2Id}
+					id={tab2Id}
 					style={
 						tab2ImageUrl ? { backgroundImage: `url(${ tab2ImageUrl })` } : {}
 					}
@@ -44,10 +50,10 @@ export default function Tabs( { attributes } ) {
 			</div>
 
 			<div
-				id="panel-1"
+				id={panel1Id}
 				role="tabpanel"
 				tabIndex="0"
-				aria-labelledby="tab-1"
+				aria-labelledby={tab1Id}
 				className="__content"
 			>
 				<p>
@@ -63,10 +69,10 @@ export default function Tabs( { attributes } ) {
 			</div>
 
 			<div
-				id="panel-2"
+				id={panel2Id}
 				role="tabpanel"
 				tabIndex="0"
-				aria-labelledby="tab-2"
+				aria-labelledby={tab2Id}
 				className="__content is-hidden"
 			>
 				<p>

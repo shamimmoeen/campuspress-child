@@ -13,6 +13,9 @@
   ],
   "example": {},
   "attributes": {
+    "uniqueId": {
+      "type": "string"
+    },
     "tab1ImageMediumUrl": {
       "type": "string"
     },
