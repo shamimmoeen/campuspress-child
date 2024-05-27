@@ -11,6 +11,7 @@ export default function Tabs( { attributes } ) {
 		tab2Title,
 		tab2Description,
 		tab2Link,
+		ariaLabel
 	} = attributes;
 
 	const tab1Id = `tab-1-${ uniqueId }`;
@@ -22,14 +23,14 @@ export default function Tabs( { attributes } ) {
 		<div className="__image_tabs">
 			<div
 				role="tablist"
-				aria-label={ __( 'Tabs', 'campuspress-child' ) }
+				aria-label={ ariaLabel }
 				className="__images __image_tabs_block_tablist"
 			>
 				<button
 					role="tab"
 					aria-selected="true"
-					aria-controls={panel1Id}
-					id={tab1Id}
+					aria-controls={ panel1Id }
+					id={ tab1Id }
 					style={
 						tab1ImageUrl ? { backgroundImage: `url(${ tab1ImageUrl })` } : {}
 					}
@@ -39,8 +40,8 @@ export default function Tabs( { attributes } ) {
 				<button
 					role="tab"
 					aria-selected="false"
-					aria-controls={panel2Id}
-					id={tab2Id}
+					aria-controls={ panel2Id }
+					id={ tab2Id }
 					style={
 						tab2ImageUrl ? { backgroundImage: `url(${ tab2ImageUrl })` } : {}
 					}
@@ -50,10 +51,10 @@ export default function Tabs( { attributes } ) {
 			</div>
 
 			<div
-				id={panel1Id}
+				id={ panel1Id }
 				role="tabpanel"
 				tabIndex="0"
-				aria-labelledby={tab1Id}
+				aria-labelledby={ tab1Id }
 				className="__content"
 			>
 				<p>
@@ -69,10 +70,10 @@ export default function Tabs( { attributes } ) {
 			</div>
 
 			<div
-				id={panel2Id}
+				id={ panel2Id }
 				role="tabpanel"
 				tabIndex="0"
-				aria-labelledby={tab2Id}
+				aria-labelledby={ tab2Id }
 				className="__content is-hidden"
 			>
 				<p>

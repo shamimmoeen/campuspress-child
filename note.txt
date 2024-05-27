@@ -1,4 +1,5 @@
-* Fix wrong id issue when used multiple tabs on a page
-* Add controls to specify aria-label
+* Fix wrong id issue when used multiple tabs on a page (done)
+* Add controls to specify aria-label (done)
 * Maybe don't use 10up/components and build our custom media select button (done)
 * Maybe integrate the tabs in the editor
+* Maybe check the block localization

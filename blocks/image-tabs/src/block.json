@@ -51,6 +51,10 @@
     "tab2Link": {
       "type": "string",
       "default": "https://wordpress.org/"
+    },
+    "ariaLabel": {
+      "type": "string",
+      "default": "Tabs"
     }
   },
   "supports": {

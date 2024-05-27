@@ -1,5 +1,5 @@
 import { __ } from '@wordpress/i18n';
-import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { useBlockProps, InspectorControls, InspectorAdvancedControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl, TextareaControl } from '@wordpress/components';
 import { useEffect } from '@wordpress/element';
 import MediaControl from './MediaControl';
@@ -17,6 +17,7 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		tab2Title,
 		tab2Description,
 		tab2Link,
+		ariaLabel
 	} = attributes;
 
 	useEffect( () => {
@@ -118,6 +119,16 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 					/>
 				</PanelBody>
 			</InspectorControls>
+
+			<InspectorAdvancedControls>
+				<TextControl
+					label={ __( 'Aria Label', 'campuspress-child' ) }
+					value={ ariaLabel }
+					onChange={ ( value ) =>
+						setAttributes( { ariaLabel: value } )
+					}
+				/>
+			</InspectorAdvancedControls>
 
 			<Tabs attributes={ attributes } />
 		</div>
