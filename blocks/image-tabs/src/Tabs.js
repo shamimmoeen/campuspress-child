@@ -42,6 +42,7 @@ export default function Tabs( { attributes } ) {
 					aria-selected="false"
 					aria-controls={ panel2Id }
 					id={ tab2Id }
+					tabIndex={ -1 }
 					style={
 						tab2ImageUrl ? { backgroundImage: `url(${ tab2ImageUrl })` } : {}
 					}

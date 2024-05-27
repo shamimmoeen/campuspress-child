@@ -1,8 +1,3 @@
-/* eslint-disable no-console */
-console.log( 'Hello World! (from create-block-image-tabs-block block)!' );
-
-/* eslint-enable no-console */
-
 class TabsAutomatic {
 	constructor( groupNode ) {
 		this.tablistNode = groupNode;
