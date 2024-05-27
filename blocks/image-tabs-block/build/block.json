@@ -9,8 +9,8 @@
   "description": "A block for creating interactive tabs with images.",
   "example": {},
   "attributes": {
-    "tab1Image": {
-      "type": "integer"
+    "tab1ImageMediumUrl": {
+      "type": "string"
     },
     "tab1ImageUrl": {
       "type": "string"
@@ -27,8 +27,8 @@
       "type": "string",
       "default": "https://wordpress.org/"
     },
-    "tab2Image": {
-      "type": "integer"
+    "tab2ImageMediumUrl": {
+      "type": "string"
     },
     "tab2ImageUrl": {
       "type": "string"
