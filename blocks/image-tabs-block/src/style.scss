@@ -1,0 +1,59 @@
+.wp-block-campuspress-child-image-tabs {
+	.__images {
+		display: flex;
+
+		> button {
+			align-items: center;
+			background: none no-repeat center;
+			background-size: cover;
+			border: none;
+			border-radius: 0;
+			cursor: pointer;
+			display: inline-flex;
+			flex: 1;
+			justify-content: center;
+			padding-top: 40%;
+			position: relative;
+			text-align: center;
+			z-index: 111;
+
+			&[aria-selected="true"] {
+				background-color: #f5f5f5;
+				flex: 1.5;
+				z-index: 1111;
+			}
+
+			&:not([aria-selected="true"]) {
+				background-color: #ddd;
+			}
+
+			> span {
+				background-color: #222;
+				bottom: 0;
+				color: #fff;
+				display: inline-block;
+				font-size: 2.4em;
+				font-weight: bold;
+				padding: 0 14px;
+				position: absolute;
+				right: 0;
+			}
+		}
+	}
+
+	.__content {
+		&.is-hidden {
+			display: none;
+		}
+
+		p {
+			margin: 2.5em 0 2em;
+
+			.__bold {
+				font-size: 1.6em;
+				font-weight: bold;
+				margin-right: 10px;
+			}
+		}
+	}
+}
