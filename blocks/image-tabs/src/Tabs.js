@@ -27,6 +27,7 @@ export default function Tabs( { attributes } ) {
 					aria-selected="true"
 					aria-controls={ panel1Id }
 					id={ tab1Id }
+					className={ tab1ImageUrl ? '__has_image' : '' }
 					style={
 						tab1ImageUrl
 							? { backgroundImage: `url(${ tab1ImageUrl })` }
@@ -40,6 +41,7 @@ export default function Tabs( { attributes } ) {
 					aria-selected="false"
 					aria-controls={ panel2Id }
 					id={ tab2Id }
+					className={ tab2ImageUrl ? '__has_image' : '' }
 					tabIndex={ -1 }
 					style={
 						tab2ImageUrl

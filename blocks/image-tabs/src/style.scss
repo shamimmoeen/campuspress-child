@@ -29,6 +29,19 @@
 
 			&:not([aria-selected="true"]) {
 				background-color: #ddd;
+
+				&.__has_image {
+					&::after {
+						background-color: rgba(0, 0, 0, .35);
+						content: '';
+						height: 100%;
+						left: 0;
+						position: absolute;
+						top: 0;
+						width: 100%;
+						z-index: 111;
+					}
+				}
 			}
 
 			> span {
