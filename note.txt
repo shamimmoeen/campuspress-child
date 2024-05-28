@@ -3,4 +3,5 @@
 * Maybe don't use 10up/components and build our custom media select button (done)
 * Maybe integrate the tabs in the editor (done)
 * Create the element conditionally when data found
+* Check for accessibility issue
 * Maybe check the block localization
