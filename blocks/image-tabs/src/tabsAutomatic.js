@@ -23,8 +23,6 @@ class TabsAutomatic {
 
 			tab.addEventListener( 'keydown', this.boundKeydownHandler );
 			tab.addEventListener( 'click', this.boundClickHandler );
-
-			console.log( `Added event listeners to tab ${ tab.id }` );
 		} );
 
 		this.setSelectedTab( this.firstTab, false );
@@ -36,8 +34,6 @@ class TabsAutomatic {
 		this.tabs.forEach( ( tab ) => {
 			tab.removeEventListener( 'keydown', this.boundKeydownHandler );
 			tab.removeEventListener( 'click', this.boundClickHandler );
-
-			console.log( `Removed event listeners from tab ${ tab.id }` );
 		} );
 	}
 
@@ -86,8 +82,6 @@ class TabsAutomatic {
 		const tgt = event.currentTarget;
 		let flag = false;
 
-		console.log( 'key event' );
-
 		switch ( event.key ) {
 			case 'ArrowLeft':
 				this.setSelectedToPreviousTab( tgt );
@@ -121,7 +115,6 @@ class TabsAutomatic {
 
 	onClick( event ) {
 		this.setSelectedTab( event.currentTarget );
-		console.log( 'clicked' );
 	}
 }
 

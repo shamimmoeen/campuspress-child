@@ -31,9 +31,9 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	}, [] );
 
 	useEffect( () => {
-		// if ( ! uniqueId ) {
-		// 	return;
-		// }
+		if ( ! uniqueId ) {
+			return;
+		}
 
 		if ( tabsContainerRef.current ) {
 			const tabsElement = tabsContainerRef.current.querySelector(
