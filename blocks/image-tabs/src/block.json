@@ -4,7 +4,7 @@
   "name": "campuspress-child/image-tabs",
   "version": "0.1.0",
   "title": "Image Tabs",
-  "category": "widgets",
+  "category": "media",
   "icon": "block-default",
   "description": "A block for creating interactive tabs with images.",
   "keywords": [
