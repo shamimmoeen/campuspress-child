@@ -1,9 +1,10 @@
 import { __ } from '@wordpress/i18n';
 import { useBlockProps, InspectorControls, InspectorAdvancedControls } from '@wordpress/block-editor';
 import { PanelBody, TextControl, TextareaControl } from '@wordpress/components';
-import { useEffect } from '@wordpress/element';
+import { useEffect, useRef } from '@wordpress/element';
 import MediaControl from './MediaControl';
 import Tabs from './Tabs';
+import TabsAutomatic from './tabsAutomatic';
 import './editor.scss';
 
 export default function Edit( { attributes, setAttributes, clientId } ) {
@@ -17,14 +18,40 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		tab2Title,
 		tab2Description,
 		tab2Link,
-		ariaLabel
+		ariaLabel,
 	} = attributes;
+
+	const tabsContainerRef = useRef();
+	const tabsInstance = useRef();
 
 	useEffect( () => {
 		if ( ! uniqueId ) {
 			setAttributes( { uniqueId: clientId } );
 		}
 	}, [] );
+
+	useEffect( () => {
+		// if ( ! uniqueId ) {
+		// 	return;
+		// }
+
+		if ( tabsContainerRef.current ) {
+			const tabsElement = tabsContainerRef.current.querySelector(
+				'.__automatic_image_tabs',
+			);
+
+			if ( tabsElement ) {
+				tabsInstance.current = new TabsAutomatic( tabsElement );
+			}
+		}
+
+		return () => {
+			if ( tabsInstance.current ) {
+				tabsInstance.current.removeEventListeners();
+				tabsInstance.current = null;
+			}
+		};
+	}, [ uniqueId, tabsContainerRef ] );
 
 	const onSelectTab1Image = ( media ) => {
 		const {
@@ -124,13 +151,13 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 				<TextControl
 					label={ __( 'Aria Label', 'campuspress-child' ) }
 					value={ ariaLabel }
-					onChange={ ( value ) =>
-						setAttributes( { ariaLabel: value } )
-					}
+					onChange={ ( value ) => setAttributes( { ariaLabel: value } ) }
 				/>
 			</InspectorAdvancedControls>
 
-			<Tabs attributes={ attributes } />
+			<div ref={ tabsContainerRef }>
+				<Tabs attributes={ attributes } />
+			</div>
 		</div>
 	);
 }

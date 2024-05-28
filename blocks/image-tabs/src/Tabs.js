@@ -11,7 +11,7 @@ export default function Tabs( { attributes } ) {
 		tab2Title,
 		tab2Description,
 		tab2Link,
-		ariaLabel
+		ariaLabel,
 	} = attributes;
 
 	const tab1Id = `tab-1-${ uniqueId }`;
@@ -20,19 +20,17 @@ export default function Tabs( { attributes } ) {
 	const panel2Id = `panel-2-${ uniqueId }`;
 
 	return (
-		<div className="__image_tabs">
-			<div
-				role="tablist"
-				aria-label={ ariaLabel }
-				className="__images __image_tabs_block_tablist"
-			>
+		<div className="__automatic_image_tabs">
+			<div role="tablist" aria-label={ ariaLabel } className="__images">
 				<button
 					role="tab"
 					aria-selected="true"
 					aria-controls={ panel1Id }
 					id={ tab1Id }
 					style={
-						tab1ImageUrl ? { backgroundImage: `url(${ tab1ImageUrl })` } : {}
+						tab1ImageUrl
+							? { backgroundImage: `url(${ tab1ImageUrl })` }
+							: {}
 					}
 				>
 					<span>{ __( '01', 'campuspress-child' ) }</span>
@@ -44,7 +42,9 @@ export default function Tabs( { attributes } ) {
 					id={ tab2Id }
 					tabIndex={ -1 }
 					style={
-						tab2ImageUrl ? { backgroundImage: `url(${ tab2ImageUrl })` } : {}
+						tab2ImageUrl
+							? { backgroundImage: `url(${ tab2ImageUrl })` }
+							: {}
 					}
 				>
 					<span>{ __( '02', 'campuspress-child' ) }</span>
